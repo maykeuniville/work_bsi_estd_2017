@@ -1,0 +1,16 @@
+package estd;
+
+public class Even {
+
+	public int countEvens(int[] nums) {
+
+		for (int num : nums) {
+			System.out.println(num);
+		}
+		
+		
+		return 0;
+
+	}
+
+}

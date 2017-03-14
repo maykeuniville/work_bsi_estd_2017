@@ -1,0 +1,14 @@
+package estd;
+
+import org.junit.Test;
+
+public class EvenTest {
+
+	@Test
+	public void countEvensTest() {
+		Even even = new Even();
+		
+
+	}
+
+}

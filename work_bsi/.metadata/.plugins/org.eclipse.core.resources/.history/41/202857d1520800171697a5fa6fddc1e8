@@ -1,0 +1,10 @@
+package estd;
+
+public class BigDiff {
+
+	public int bigDiff(int[] nums) {
+		
+		
+	}
+
+}
