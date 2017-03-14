@@ -1,3 +1,0 @@
-INDEX VERSION 1.129+C:\Users\ivanbosnic\Documents\work_bsi_estd_2017\work_bsi\.metadata\.plugins\org.eclipse.jdt.core
-3383481985.index
-1473200930.index

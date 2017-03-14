@@ -1,9 +1,0 @@
-package estd;
-
-public class EvenTest {
-
-	public void countEvensTest() {
-
-	}
-
-}
