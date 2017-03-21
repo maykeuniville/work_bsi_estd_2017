@@ -12,6 +12,8 @@ public class Stock {
 	private BigDecimal openPrice;
 	
 	private BigDecimal closePrice;
+
+	private BigDecimal maxPrice;
 	
 	private BigDecimal minPrice;
 	
@@ -63,6 +65,5 @@ public class Stock {
 		this.maxPrice = maxPrice;
 	}
 
-	private BigDecimal maxPrice;
 
 }
