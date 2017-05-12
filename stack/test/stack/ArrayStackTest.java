@@ -1,5 +1,7 @@
 package stack;
 
+import java.util.ArrayList;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -7,9 +9,7 @@ public class ArrayStackTest {
 
 	@Test
 	public void pushTest() {
-		
 		Stack<String> stack = new ArrayStack<>();
-		
 		Assert.assertEquals(0, stack.getSize());
 		Assert.assertTrue(stack.isEmpty());
 		
@@ -33,5 +33,20 @@ public class ArrayStackTest {
 		Assert.assertEquals("C", stack.top());
 		Assert.assertEquals(3, stack.getSize());
 	}
+	
+	@Test
+	public void popTest() {
+		Stack<String> stack = new ArrayStack<>();
+		stack.push("A");
+		stack.push("B");
+		stack.push("C");
+		
+		Assert.assertEquals("C", stack.pop());
+		Assert.assertEquals("B", stack.pop());
+		Assert.assertEquals("A", stack.pop());
+		Assert.assertEquals(0, stack.getSize());
+		Assert.assertTrue(stack.isEmpty());
+		Assert.assertEquals(null, stack.pop());
+	}	
 	
 }
