@@ -49,4 +49,16 @@ public class ArrayStackTest {
 		Assert.assertEquals(null, stack.pop());
 	}	
 	
+	@Test
+	public void resizeTest() {
+		Stack<String> stack = new ArrayStack<>(1);
+
+		stack.push("A");
+		stack.push("B");
+		stack.push("C");
+		
+		Assert.assertEquals(3, stack.getSize());
+		Assert.assertFalse(stack.isEmpty());
+	}	
+	
 }
