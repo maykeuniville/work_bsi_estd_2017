@@ -2,13 +2,15 @@ package stack;
 
 public class Q1 {
 
-	public Stack<Integer> toStack (int[] n) {
+	public Stack<Integer> toStack (int[] array) {
 		
-		/*
-		 * Implementar
-		 */
-
-		return null;
+		Stack<Integer> stack = new ArrayStack<>();
+		
+		for (int elem : array) {
+			stack.push(elem);
+		}
+		
+		return stack;
 	}
 	
 }
