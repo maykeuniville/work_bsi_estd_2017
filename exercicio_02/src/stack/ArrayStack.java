@@ -64,25 +64,31 @@ public class ArrayStack<E> implements Stack<E> {
 	@Override
 	public List<E> pop(int n) {
 		List<E> list = new ArrayList<>();
-		/*
-		 * Implementar
-		 */
+
+		for (int i = 0; i < n; i++) {
+			E aux = this.pop();
+			list.add(aux);
+			if (isEmpty()) {
+				break;
+			}
+		}
+
 		return list;
 	}
 
 	@Override
 	public List<E> clear() {
-		/*
-		 * Implementar
-		 */
-		return null;
+		return pop(getSize());
 	}
 
 	@Override
 	public Stack<E> cloneStack() {
-		/*
-		 * 
-		 */
-		return null;
+		Stack<E> clone = new ArrayStack<>();
+
+		for (int i = 0; i < position; i++) {
+			clone.push(array[i]);
+		}
+
+		return clone;
 	}
 }
