@@ -18,5 +18,23 @@ public class ArrayQueueTest {
 		Assert.assertFalse(queue.isEmpty());
 		Assert.assertTrue(queue.getSize() == 3);
 	}
+	
+	@Test
+	public void dequeueTest() {
+		ArrayQueue<String> queue = new ArrayQueue<>();
+
+		queue.enqueue("A");
+		queue.enqueue("B");
+		queue.enqueue("C");
+
+		Assert.assertEquals("A", queue.front());
+		Assert.assertEquals("A", queue.front());
+		
+		Assert.assertEquals("A", queue.dequeue());
+		Assert.assertEquals("B", queue.dequeue());
+		Assert.assertEquals("C", queue.dequeue());
+		Assert.assertTrue(queue.isEmpty());
+		
+	}
 
 }

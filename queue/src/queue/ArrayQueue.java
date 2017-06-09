@@ -7,6 +7,8 @@ public class ArrayQueue<E> implements Queue<E> {
 	private int head = 0;
 
 	private int tail = 0;
+	
+	private int size = 0;
 
 	public ArrayQueue() {
 		array = (E[]) new Object[20];
@@ -19,6 +21,7 @@ public class ArrayQueue<E> implements Queue<E> {
 	@Override
 	public void enqueue(E e) {
 		array[tail++] = e;
+		size++;
 	}
 
 	@Override
@@ -26,6 +29,7 @@ public class ArrayQueue<E> implements Queue<E> {
 		E aux = array[head];
 		array[head] = null;
 		head++;
+		size--;
 		return aux;
 	}
 
@@ -41,7 +45,7 @@ public class ArrayQueue<E> implements Queue<E> {
 
 	@Override
 	public int getSize() {
-		return tail - head;
+		return size;
 	}
 
 }
