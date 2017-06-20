@@ -22,19 +22,20 @@ public class ArrayQueue<E> implements Queue<E> {
 
 	@Override
 	public void enqueue(E e) {
-		
 		if (isFull()) {
-			tail = array.length;
-			System.out.println("Redimensionando...");
 			E[] temp = (E[]) new Object[array.length * 2];
-			System.arraycopy(array, 0, temp, 0, array.length);
+
+			for (int i = 0; i < array.length; i++) {
+				temp[i] = array[head];
+				head = (head + 1) % array.length;
+			}
+			head = 0;
+			tail = array.length;
 			array = temp;
 		}
-		
 		array[tail] = e;
-		tail++;
+		tail = (tail + 1) % array.length;
 		size++;
-		tail = tail % array.length;
 		System.out.println(Arrays.toString(array));
 	}
 
@@ -45,8 +46,7 @@ public class ArrayQueue<E> implements Queue<E> {
 		} else {
 			E aux = array[head];
 			array[head] = null;
-			head++;
-			head = head % array.length;
+			head = (head + 1) % array.length;
 			size--;
 			System.out.println(Arrays.toString(array));
 			return aux;
@@ -71,5 +71,5 @@ public class ArrayQueue<E> implements Queue<E> {
 	private boolean isFull() {
 		return getSize() == array.length;
 	}
-	
+
 }
