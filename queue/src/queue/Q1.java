@@ -1,18 +1,17 @@
 package queue;
 
 public class Q1 {
-	
-	public Queue<Integer> q1 (Integer[] a, Integer[] b) {
-		Queue<Integer> result = new ArrayQueue<>();
-		
-		for (Integer integer : a) {
-			result.enqueue(integer);
+
+	public Queue<Character> q1(Queue<Character> queue) {
+		Queue<Character> result = new ArrayQueue<>();
+
+		while (!queue.isEmpty()) {
+			char ch = queue.dequeue();
+			if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+				result.enqueue(ch);
+			}
 		}
-		
-		for (Integer integer : b) {
-			result.enqueue(integer);
-		}
-		
+
 		return result;
 	}
 
